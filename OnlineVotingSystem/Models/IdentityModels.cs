@@ -21,9 +21,13 @@ namespace OnlineVotingSystem.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("VotingSystemConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual DbSet<President> Presidents { get; set; }
+        public virtual DbSet<VicePresident> VicePresidents { get; set; }
+        public virtual DbSet<VoterList> VoterLists { get; set; }
 
         public static ApplicationDbContext Create()
         {
