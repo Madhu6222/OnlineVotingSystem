@@ -1,0 +1,94 @@
+﻿@model OnlineVotingSystem.Models.ViewModels.candidatesViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>VoterList</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.VoterList.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.VoterId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VoterList.VoterId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VoterList.VoterId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.userId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VoterList.userId, new { htmlAttributes = new { @class = "form-control", disabled = "true", type = "password" } })
+                @Html.ValidationMessageFor(model => model.VoterList.userId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.ElectionId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VoterList.ElectionId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VoterList.ElectionId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.PresidentCandidateId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @foreach (var item in Model.PresidentCandidate)
+            {
+                <div class="col-md-10">
+                    @Html.RadioButtonFor(model => model.VoterList.PresidentCandidateId, item.Id, new { id = "" })
+                    <span>@item.Name</span>
+
+
+
+                </div>
+
+            }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.VicePresidentCandidateId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @foreach (var item in Model.VicePresidentCandidate)
+            {
+                <div class="col-md-10">
+                    @Html.RadioButtonFor(model => model.VoterList.VicePresidentCandidateId, item.Id, new { id = "" })
+                    <span>@item.Name</span>
+
+                </div>
+
+            }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.VoterList.VotedTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.VoterList.VotedTime, new { htmlAttributes = new { @class = "form-control", disabled = "true" } })
+                @Html.ValidationMessageFor(model => model.VoterList.VotedTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

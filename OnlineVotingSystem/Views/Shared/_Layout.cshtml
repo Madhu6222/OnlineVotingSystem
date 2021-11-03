@@ -92,9 +92,19 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
-                <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { id = "OT", style = "color: rgba(0,0,0,.5)" })</li>
-                <li class="nav-link">@Html.ActionLink("About", "About", "Home", new { id = "OT", style = "color: rgba(0,0,0,.5)" })</li>
-                <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home", new { id = "OT", style = "color: rgba(0,0,0,.5)" })</li>
+                <li class="nav-link">@Html.ActionLink("Home", "Index", "Home", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+                <li class="nav-link">@Html.ActionLink("About", "About", "Home", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+                <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+
+              
+                @if (Request.IsAuthenticated)
+                {
+
+                    <li class="nav-link">@Html.ActionLink("President", "Index", "Presidents", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+                    <li class="nav-link">@Html.ActionLink("Vice President", "Index", "VicePresidents", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+                    <li class="nav-link">@Html.ActionLink("Election", "Index", "VoterLists", new { id = 1 }, new { @style = "color:rgba(0,0,0,.5);" })</li>
+                }
+                
 
             </ul>
 

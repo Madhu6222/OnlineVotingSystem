@@ -1,0 +1,66 @@
+﻿@model OnlineVotingSystem.Models.VoterList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VoterList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VoterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElectionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElectionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresidentCandidateId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresidentCandidateId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VicePresidentCandidateId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VicePresidentCandidateId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VotedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VotedTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
