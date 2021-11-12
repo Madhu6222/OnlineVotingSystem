@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Graphs";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+    <head>
+        <script src="~/Scripts/Chart.min.js"></script>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+        <style>
+            #chart_container{
+                width:600px;
+                height:600px;
+                border:1px solid #ddd;
+                padding:1px;
+                border-radius:4px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2>Graphs</h2>
+
+
+        <div id="chart_container">
+
+            <canvas id="bar_chart"></canvas>
+            @*<canvas id="pie-chart"></canvas>*@
+
+        </div>
+
+
+        <script>
+            var nameArray = @Html.Raw(Json.Encode(ViewBag.name));
+            var voteArray = @Html.Raw(Json.Encode(ViewBag.vote));
+
+            var ctx = $("#bar_chart");
+            var bacChart = new Chart(ctx, {
+
+                type: 'bar',
+                data: {
+
+                    labels: nameArray,
+                    datasets: [{
+                        label: ' Votes Received',
+                        data: voteArray,
+                        backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'],
+                        borderColor: ['rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'],
+                        borderWidth: 1
+
+                    }]
+
+
+                },
+
+                options: {
+
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    maintainAspectRatio: false,
+                    legend: { position: 'top' }, title: {
+                        display: true,
+                        text: 'President Candidate results'
+                    }
+                },
+
+            });
+
+
+
+        </script>
+
+
+        @*<script>
+
+            var nameArray = @Html.Raw(Json.Encode(ViewBag.name));
+            var voteArray = @Html.Raw(Json.Encode(ViewBag.vote));
+
+
+            var bacChart = new Chart(document.getElementById("pie-chart"), {
+                type: 'pie',
+                data: {
+                    labels: nameArray,
+                    datasets: [{
+                        label: ' Votes Received',
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                        data: voteArray,
+                    }]
+
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: 'President Candidate results'
+                    }
+                }
+            });
+            
+        </script>*@
+
+
+    </body>
+
+
+</html>
+
+
+
+

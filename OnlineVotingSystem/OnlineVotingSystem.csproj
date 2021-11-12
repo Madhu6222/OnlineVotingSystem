@@ -194,6 +194,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Chart.cs" />
     <Compile Include="Models\President.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -210,6 +211,8 @@
     <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FrontEnd\build\config\postcss.config.js" />
@@ -2302,6 +2305,9 @@
     <Content Include="FrontEnd\plugins\summernote\summernote.min.js.map" />
     <Content Include="FrontEnd\plugins\toastr\toastr.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -2361,6 +2367,7 @@
     <Content Include="Views\VoterLists\Details.cshtml" />
     <Content Include="Views\VoterLists\Edit.cshtml" />
     <Content Include="Views\VoterLists\Index.cshtml" />
+    <Content Include="Views\Home\Graphs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
