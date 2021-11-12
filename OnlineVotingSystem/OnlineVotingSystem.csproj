@@ -2367,7 +2367,10 @@
     <Content Include="Views\VoterLists\Details.cshtml" />
     <Content Include="Views\VoterLists\Edit.cshtml" />
     <Content Include="Views\VoterLists\Index.cshtml" />
-    <Content Include="Views\Home\Graphs.cshtml" />
+    <Content Include="Views\Home\PresidentBarGraph.cshtml" />
+    <Content Include="Views\Home\PresidentPieGraph.cshtml" />
+    <Content Include="Views\Home\VicePresidentPieGraph.cshtml" />
+    <Content Include="Views\Home\VicePresidentBarGraph.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

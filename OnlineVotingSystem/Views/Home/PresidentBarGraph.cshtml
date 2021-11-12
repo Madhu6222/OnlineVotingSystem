@@ -31,7 +31,6 @@
         <div id="chart_container">
 
             <canvas id="bar_chart"></canvas>
-            @*<canvas id="pie-chart"></canvas>*@
 
         </div>
 
@@ -90,35 +89,6 @@
 
 
         </script>
-
-
-        @*<script>
-
-            var nameArray = @Html.Raw(Json.Encode(ViewBag.name));
-            var voteArray = @Html.Raw(Json.Encode(ViewBag.vote));
-
-
-            var bacChart = new Chart(document.getElementById("pie-chart"), {
-                type: 'pie',
-                data: {
-                    labels: nameArray,
-                    datasets: [{
-                        label: ' Votes Received',
-                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                        data: voteArray,
-                    }]
-
-                },
-                options: {
-
-                    title: {
-                        display: true,
-                        text: 'President Candidate results'
-                    }
-                }
-            });
-            
-        </script>*@
 
 
     </body>

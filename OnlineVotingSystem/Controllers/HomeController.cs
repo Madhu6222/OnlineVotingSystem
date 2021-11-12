@@ -29,7 +29,7 @@ namespace OnlineVotingSystem.Controllers
             return View();
         }
 
-        public ActionResult Graphs()
+        public ActionResult PresidentBarGraph()
         {
 
             var nameList = (from names in db.Presidents
@@ -45,5 +45,52 @@ namespace OnlineVotingSystem.Controllers
             return View();
         }
 
+        public ActionResult PresidentPieGraph()
+        {
+
+            var nameList = (from names in db.Presidents
+                            where names.Name != ""
+                            select names.Name).ToArray();
+
+            var voteList = (from vote in db.Presidents
+                            select vote.TotalVote).ToArray();
+
+            ViewBag.name = nameList;
+            ViewBag.vote = voteList;
+
+            return View();
+        }
+
+        public ActionResult VicePresidentPieGraph()
+        {
+
+            var nameList = (from names in db.VicePresidents
+                            where names.Name != ""
+                            select names.Name).ToArray();
+
+            var voteList = (from vote in db.VicePresidents
+                            select vote.TotalVote).ToArray();
+
+            ViewBag.name = nameList;
+            ViewBag.vote = voteList;
+
+            return View();
+        }
+
+        public ActionResult VicePresidentBarGraph()
+        {
+
+            var nameList = (from names in db.VicePresidents
+                            where names.Name != ""
+                            select names.Name).ToArray();
+
+            var voteList = (from vote in db.VicePresidents
+                            select vote.TotalVote).ToArray();
+
+            ViewBag.name = nameList;
+            ViewBag.vote = voteList;
+
+            return View();
+        }
     }
 }
