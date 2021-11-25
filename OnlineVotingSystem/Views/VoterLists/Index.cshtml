@@ -1,90 +1,94 @@
 ﻿@model IEnumerable<OnlineVotingSystem.Models.VoterList>
 
 @{
-	ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 
 <link href="~/Content/Advertisement.css" rel="stylesheet" />
 
 <div class="container presentElectionDiv">
-	<div class="">
-		<h1>Welcome to @DateTime.Now.ToString("MMMM yyyy") Elections</h1>
-		<p>Election for President and Vice President are being help, participate in the election by using your right to vote to choose a suitable candidate for corresponding posts.</p>
-		<p>Register yourself with your Voter ID to vote.</p>
+    <div class="">
+        <h1>Welcome to @DateTime.Now.ToString("MMMM yyyy") Elections</h1>
+        <p>Election for President and Vice President are being help, participate in the election by using your right to vote to choose a suitable candidate for corresponding posts.</p>
+        <p>Register yourself with your Voter ID to vote.</p>
 
 
 
 
-	</div>
-	<p>
-		@Html.ActionLink("Register and Vote", "Create", new { id = "voteRegisterIdBtn" }, new { @class = "voteBtn" })
-	</p>
+    </div>
+    <p>
+        @Html.ActionLink("Register and Vote", "Create", new { id = "voteRegisterIdBtn" }, new { @class = "voteBtn" })
+    </p>
 
 </div>
 
 <div class="rainbow rainbow_text_animated">
 
-	<div class="container addBox">
-		<div class="row">
-			<h1>Upcoming Presidential Elections</h1>
-			<p>The upcoming elections for President and Vice President posts will be held on <b>March 2022.</b> Voters intersted in the input for the elections can register themselves and for their respective chosen candidates. </p>
-			<p>The date for the Elections will be announced soon!</p>
-		</div>
-	</div>
+    <div class="container addBox">
+        <div class="row">
+            <h1>Upcoming Presidential Elections</h1>
+            <p>The upcoming elections for President and Vice President posts will be held on <b>March 2022.</b> Voters intersted in the input for the elections can register themselves and for their respective chosen candidates. </p>
+            <p>The date for the Elections will be announced soon!</p>
+        </div>
+    </div>
 
 </div>
 
+@if (User.IsInRole("Admin"))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VoterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresidentCandidateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VicePresidentCandidateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VotedTime)
+            </th>
+            <th></th>
+        </tr>
 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VoterId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ElectionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PresidentCandidateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VicePresidentCandidateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VotedTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
 
-<table class="table">
-	<tr>
-		<th>
-			@Html.DisplayNameFor(model => model.VoterId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.userId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.ElectionId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.PresidentCandidateId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.VicePresidentCandidateId)
-		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.VotedTime)
-		</th>
-		<th></th>
-	</tr>
-
-@foreach (var item in Model) {
-	<tr>
-		<td>
-			@Html.DisplayFor(modelItem => item.VoterId)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.userId)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.ElectionId)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.PresidentCandidateId)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.VicePresidentCandidateId)
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.VotedTime)
-		</td>
-		<td>
-			@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-			@Html.ActionLink("Details", "Details", new { id=item.Id }) |
-			@Html.ActionLink("Delete", "Delete", new { id=item.Id })
-		</td>
-	</tr>
+    </table>
 }
 
-</table>
+
