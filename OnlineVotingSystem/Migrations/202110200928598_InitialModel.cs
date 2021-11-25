@@ -97,18 +97,7 @@ namespace OnlineVotingSystem.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.VoterLists",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Email = c.String(),
-                        IsVotedChairman = c.Boolean(nullable: false),
-                        IsVotedMemberMan = c.Boolean(nullable: false),
-                        IvotedMemberWomen = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
+           
             
         }
         
@@ -124,7 +113,7 @@ namespace OnlineVotingSystem.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropTable("dbo.VoterLists");
+      
             DropTable("dbo.VicePresidents");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
