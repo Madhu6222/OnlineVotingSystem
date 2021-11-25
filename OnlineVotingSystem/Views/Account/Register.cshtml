@@ -8,39 +8,44 @@
     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form1", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        <div class="accountDiv">
+    <div class="accountDiv">
 
 
-            <h2>Register</h2>
-            <h4>Create a new account. </h4>
-            <hr />
-            @Html.ValidationSummary("", new { @class = "text-danger" })
-       
+        <h2>Register</h2>
+        <h4>Create a new account. </h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
 
-            <div class="">
-                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "un" })
-                </div>
-            </div>
-            <div class="">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.Password, new { @class = "pass" })
-                </div>
-            </div>
-            <div class="">
-                @Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "pass" })
-                </div>
-            </div>
-            <div class="">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="submit" value="Register" />
-                </div>
+        <div class="">
+            @Html.LabelFor(m => m.FullName, new { @class = " control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FullName, new { @class = "un" })
             </div>
         </div>
+        <div class="">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "un" })
+            </div>
+        </div>
+        <div class="">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "pass" })
+            </div>
+        </div>
+        <div class="">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "pass" })
+            </div>
+        </div>
+        <div class="">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="submit" value="Register" />
+            </div>
+        </div>
+    </div>
     }
 </div>
 

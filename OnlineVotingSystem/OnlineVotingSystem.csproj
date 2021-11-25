@@ -188,6 +188,10 @@
     <Compile Include="Migrations\202110302105293_AlterUserIdRequiredPropInVoterListTable.Designer.cs">
       <DependentUpon>202110302105293_AlterUserIdRequiredPropInVoterListTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111252214416_addFullNameToRegisterForm.cs" />
+    <Compile Include="Migrations\202111252214416_addFullNameToRegisterForm.Designer.cs">
+      <DependentUpon>202111252214416_addFullNameToRegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\President.cs" />
@@ -2392,6 +2396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110302105293_AlterUserIdRequiredPropInVoterListTable.resx">
       <DependentUpon>202110302105293_AlterUserIdRequiredPropInVoterListTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111252214416_addFullNameToRegisterForm.resx">
+      <DependentUpon>202111252214416_addFullNameToRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

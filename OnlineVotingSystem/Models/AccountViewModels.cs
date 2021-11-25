@@ -64,6 +64,8 @@ namespace OnlineVotingSystem.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
