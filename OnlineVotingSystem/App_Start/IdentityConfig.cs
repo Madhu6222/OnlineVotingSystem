@@ -105,5 +105,10 @@ namespace OnlineVotingSystem
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        internal Task SignInAsync(string email, string password, bool rememberMe)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

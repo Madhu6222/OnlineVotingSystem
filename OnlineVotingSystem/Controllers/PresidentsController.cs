@@ -10,7 +10,7 @@ using OnlineVotingSystem.Models;
 
 namespace OnlineVotingSystem.Controllers
 {
-    public class PresidentsController : Controller
+    public class PresidentsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

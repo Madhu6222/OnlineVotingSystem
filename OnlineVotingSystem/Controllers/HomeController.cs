@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OnlineVotingSystem.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()

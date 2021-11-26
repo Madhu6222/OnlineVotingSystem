@@ -49,6 +49,7 @@
                     labels: nameArray,
                     datasets: [{
                         label: ' Votes Received',
+                        
                         data: voteArray,
                         backgroundColor: ['rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -62,26 +63,32 @@
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'],
-                        borderWidth: 1
-
+                        borderWidth: 1,
                     }]
 
 
                 },
 
                 options: {
-
+                  
                     scales: {
                         yAxes: [{
                             ticks: {
+                                fontColor: "white",
                                 beginAtZero: true
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "white"
                             }
                         }]
                     },
                     maintainAspectRatio: false,
-                    legend: { position: 'top' }, title: {
+                    legend: { position: 'top', }, title: {
                         display: true,
-                        text: 'President Candidate results'
+                        text: 'President Candidate results',
+                        fontColor: "white",
                     }
                 },
 

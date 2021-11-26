@@ -12,7 +12,7 @@ using OnlineVotingSystem.Models.ViewModels;
 
 namespace OnlineVotingSystem.Controllers
 {
-    public class VoterListsController : Controller
+    public class VoterListsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         

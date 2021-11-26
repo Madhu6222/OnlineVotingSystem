@@ -270,7 +270,7 @@
                     </div>
                     <div class="info">
 
-                        <a href="#" class="d-block">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </a>
+                        <a href="#" class="d-block">@Html.ActionLink("Hello " + ViewData["FullName"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </a>
                     </div>
                 </div>
 
@@ -290,53 +290,58 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    President Results
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="@Url.Action("PresidentBarGraph","Home")" class="nav-link ">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Bar Chart</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="@Url.Action("PresidentPieGraph","Home")" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pie Chart</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Vice President Results
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="@Url.Action("VicePresidentBarGraph","Home")" class="nav-link ">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Bar Chart</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="@Url.Action("VicePresidentPieGraph","Home")" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pie Chart</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+    with font-awesome or any other icon font library -->
+
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li class="nav-item menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        President Results
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="@Url.Action("PresidentBarGraph","Home")" class="nav-link ">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Bar Chart</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="@Url.Action("PresidentPieGraph","Home")" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Pie Chart</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Vice President Results
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="@Url.Action("VicePresidentBarGraph","Home")" class="nav-link ">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Bar Chart</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="@Url.Action("VicePresidentPieGraph","Home")" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Pie Chart</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+
 
 
                         @if (Request.IsAuthenticated)
@@ -347,7 +352,8 @@
 
 
                                 <li class="nav-item">
-                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link btn-sidebar">Log off</a>
+                        
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link "> <i class="fas fa-sign-out-alt  nav-icon"></i> Log out</a>
                                 </li>
 
                             }

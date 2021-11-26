@@ -66,7 +66,7 @@
     border: double 0.3em transparent;
     border-radius: 10px;
     /*added a colourstop here, without the third colourstop you get a hard edge*/
-    background: linear-gradient(#553340, #193056), repeating-linear-gradient(to right, rgb(82, 82, 209),rgb(235, 50, 235), rgb(82, 82, 209));
+    background: linear-gradient(#283c86, #3fa2ac), repeating-linear-gradient(to right, rgb(82, 82, 209),rgb(235, 50, 235), rgb(82, 82, 209));
     background-origin: border-box;
     background-clip: content-box, border-box;
     animation-name: rainbow;
@@ -78,7 +78,7 @@
 
 .basicPagesDiv {
     text-align: center;
-    background-color: rgba(247, 247, 2247, 0.5);
+    background-color: rgba(247, 247, 247, 0);
 }
 
 
@@ -112,7 +112,7 @@
     border-radius: 20px;
     outline: none;
     box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
     margin-left: 66px;
     text-align: center;
@@ -136,7 +136,7 @@ form.form1 {
     border-radius: 20px;
     outline: none;
     box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
     margin-left: 66px;
     text-align: center;
@@ -187,7 +187,7 @@ a {
 .accountDiv {
     text-align: center;
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #c82be3;
+    color: #dd4eed;
 }
 
 .remMe {
@@ -197,7 +197,7 @@ a {
 
 .bgGradientCustom {
     color: white;
-    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: linear-gradient(to right, #00416a, #3fa2ac);
 }
 
 .registerMain {
@@ -237,4 +237,10 @@ a {
 .voteMain {
     height: 700px;
     margin-top: 35px;
+}
+
+.learnMoreBtnHome{
+    margin-left:0;
+    font-size: 18px;
+    padding:10px 20px 10px 20px;
 }
