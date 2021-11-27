@@ -66,7 +66,8 @@
     border: double 0.3em transparent;
     border-radius: 10px;
     /*added a colourstop here, without the third colourstop you get a hard edge*/
-    background: linear-gradient(#283c86, #3fa2ac), repeating-linear-gradient(to right, rgb(82, 82, 209),rgb(235, 50, 235), rgb(82, 82, 209));
+    background: linear-gradient(#000428, #004e92), repeating-linear-gradient(to right, #FF4E50, #F9D423);
+    ;
     background-origin: border-box;
     background-clip: content-box, border-box;
     animation-name: rainbow;
@@ -153,7 +154,7 @@ form.form1 {
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #9C27B0, #E040FB);
+    background: linear-gradient(to right, #FF4E50, #F9D423);
     border: 0;
     padding-left: 40px;
     padding-right: 40px;
@@ -173,7 +174,7 @@ form.form1 {
 
 a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #E1BEE7;
+    color: #FF4E50;
     text-decoration: none
 }
 
@@ -187,7 +188,7 @@ a {
 .accountDiv {
     text-align: center;
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #dd4eed;
+    color: #FF4E50;
 }
 
 .remMe {
@@ -197,7 +198,7 @@ a {
 
 .bgGradientCustom {
     color: white;
-    background: linear-gradient(to right, #00416a, #3fa2ac);
+    background: linear-gradient(to right, #000428, #004e92);
 }
 
 .registerMain {
@@ -218,18 +219,16 @@ a {
 }
 
 .voteBtn {
-    
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #9C27B0, #E040FB);
+    background: linear-gradient(to right, #FF4E50, #F9D423);
     border: 0;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
     font-family: 'Ubuntu', sans-serif;
- 
     font-size: 25px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
@@ -244,3 +243,6 @@ a {
     font-size: 18px;
     padding:10px 20px 10px 20px;
 }
+
+
+/* #00416a, #3fa2ac*/
