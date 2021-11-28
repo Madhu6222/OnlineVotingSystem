@@ -39,8 +39,13 @@ namespace OnlineVotingSystem.Controllers
             var voteList = (from vote in db.Presidents
                             select vote.TotalVote).ToArray();
 
+            var winningCandi = db.Presidents
+                                .OrderByDescending(e => e.TotalVote)
+                                .First();
+
             ViewBag.name = nameList;
             ViewBag.vote = voteList;
+            ViewBag.winningCandidate = winningCandi.Name;
 
             return View();
         }
@@ -54,9 +59,13 @@ namespace OnlineVotingSystem.Controllers
 
             var voteList = (from vote in db.Presidents
                             select vote.TotalVote).ToArray();
+            var winningCandi = db.Presidents
+                                .OrderByDescending(e => e.TotalVote)
+                                .First();
 
             ViewBag.name = nameList;
             ViewBag.vote = voteList;
+            ViewBag.winningCandidate = winningCandi.Name;
 
             return View();
         }
@@ -71,8 +80,13 @@ namespace OnlineVotingSystem.Controllers
             var voteList = (from vote in db.VicePresidents
                             select vote.TotalVote).ToArray();
 
+            var winningCandi = db.VicePresidents
+                                .OrderByDescending(e => e.TotalVote)
+                                .First();
+
             ViewBag.name = nameList;
             ViewBag.vote = voteList;
+            ViewBag.winningCandidate = winningCandi.Name;
 
             return View();
         }
@@ -87,8 +101,13 @@ namespace OnlineVotingSystem.Controllers
             var voteList = (from vote in db.VicePresidents
                             select vote.TotalVote).ToArray();
 
+            var winningCandi = db.VicePresidents
+                                .OrderByDescending(e => e.TotalVote)
+                                .First();
+
             ViewBag.name = nameList;
             ViewBag.vote = voteList;
+            ViewBag.winningCandidate = winningCandi.Name;
 
             return View();
         }

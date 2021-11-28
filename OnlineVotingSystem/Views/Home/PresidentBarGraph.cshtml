@@ -28,6 +28,10 @@
         </style>
     </head>
 
+@{ 
+    var winningCandidate = ViewBag.winningCandidate;
+}
+
     <body>
 
 
@@ -37,6 +41,7 @@
             <canvas id="bar_chart"></canvas>
 
         </div>
+        <h2 class="winCandText">The current winning candidate is  <b>"@winningCandidate"</b></h2>
 
 
         <script>

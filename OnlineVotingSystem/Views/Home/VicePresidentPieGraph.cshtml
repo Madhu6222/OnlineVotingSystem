@@ -24,6 +24,10 @@
     </style>
 </head>
 
+@{
+    var winningCandidate = ViewBag.winningCandidate;
+}
+
 <body>
 
 
@@ -32,7 +36,7 @@
         <canvas id="pie-chart"></canvas>
 
     </div>
-
+    <h2 class="winCandText">The current winning candidate is <b>"@winningCandidate"</b></h2>
 
     <script>
 
@@ -46,7 +50,7 @@
                     labels: nameArray,
                     datasets: [{
                         label: ' Votes Received',
-                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                        backgroundColor: ["#19e6af", "#eda839", "#3cba9f", "#e8c3b9", "#c45850"],
                         data: voteArray,
                     }]
 

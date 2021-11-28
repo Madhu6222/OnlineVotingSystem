@@ -67,7 +67,7 @@
     border-radius: 10px;
     /*added a colourstop here, without the third colourstop you get a hard edge*/
     background: linear-gradient(#000428, #004e92), repeating-linear-gradient(to right, #FF4E50, #F9D423);
-    ;
+    
     background-origin: border-box;
     background-clip: content-box, border-box;
     animation-name: rainbow;
@@ -244,5 +244,27 @@ a {
     padding:10px 20px 10px 20px;
 }
 
+.winCandText {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left:450px;
+    margin-right:450px;
+    background: -webkit-linear-gradient(92deg, #FF4E50, #F9D423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
 
-/* #00416a, #3fa2ac*/
+    border:1px solid white;
+    border-radius: 25px;
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
