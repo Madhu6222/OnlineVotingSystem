@@ -248,14 +248,13 @@ a {
     text-align: center;
     padding: 15px;
     margin-top: 20px;
-    margin-left:450px;
-    margin-right:450px;
+    margin-left: auto;
+    margin-right: auto;
     background: -webkit-linear-gradient(92deg, #FF4E50, #F9D423);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-animation: hue 10s infinite linear;
-
-    border:1px solid white;
+    border: 1px solid white;
     border-radius: 25px;
 }
 
@@ -267,4 +266,18 @@ a {
     to {
         -webkit-filter: hue-rotate(-360deg);
     }
+}
+
+
+.dashboard {
+    width: 600px;
+    height: 350px;
+    padding: 1px;
+    border-radius: 4px;
+    margin: auto;
+
+}
+
+@media only screen and (max-width: 968px) {
+    .dashboard {margin-top:-65px;    }
 }

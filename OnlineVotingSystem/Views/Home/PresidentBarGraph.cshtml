@@ -34,15 +34,17 @@
 
     <body>
 
-
-        <div id="chart_container">
+        <div class="dashboard">
+            
+            <div id="chart_container">
 
             
-            <canvas id="bar_chart"></canvas>
+                <canvas id="bar_chart"></canvas>
+
+            </div>
+            <h2 class="jumbotron winCandText">The current winning candidate is  <b>"@winningCandidate"</b></h2>
 
         </div>
-        <h2 class="winCandText">The current winning candidate is  <b>"@winningCandidate"</b></h2>
-
 
         <script>
             var nameArray = @Html.Raw(Json.Encode(ViewBag.name));
